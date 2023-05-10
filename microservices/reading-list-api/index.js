@@ -1,5 +1,6 @@
 const express = require("express");
 const { v4: uuidv4 } = require("uuid");
+const cors = require('cors');
 
 const Status = Object.freeze({
   reading: "reading",
@@ -13,6 +14,9 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+  origin: '*'
+}));
 
 app.get("/readinglist", (req, res) => {
   res.json(Object.values(books));
