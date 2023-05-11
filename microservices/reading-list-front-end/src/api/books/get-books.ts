@@ -23,7 +23,7 @@ export async function getBooks(accessToken: string) {
   const headers = {
     Authorization: `Bearer ${accessToken}`,
   };
-  const response = await getReadingListInstance().get("/books", {
+  const response = await getReadingListInstance().get("/readinglist", {
     headers: headers,
   });
   return response as AxiosResponse<Book[]>;

@@ -23,7 +23,7 @@ export async function postBooks(accessToken: string, payload?: Book) {
   const headers = {
     Authorization: `Bearer ${accessToken}`,
   };
-  const response = await getReadingListInstance().post("/books", payload, {
+  const response = await getReadingListInstance().post("/readinglist", payload, {
     headers: headers,
   });
   return response;
