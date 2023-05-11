@@ -21,7 +21,7 @@ export async function deleteBooks(accessToken: string, id: string) {
   const headers = {
     Authorization: `Bearer ${accessToken}`,
   };
-  const response = await getReadingListInstance().delete(`/books?id=${id}`, {
+  const response = await getReadingListInstance().delete(`/readinglist?id=${id}`, {
     headers: headers,
   });
   return response;
